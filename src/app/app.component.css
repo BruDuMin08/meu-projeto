@@ -1,0 +1,110 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: -1px -1px var(--color-6), -1px 1px var(--color-6), 1px -1px var(--color-6), 1px 1px var(--color-6);
+}
+
+header h1 {
+    margin: 1.2rem 0;
+    letter-spacing: 1.5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: .5rem;
+}
+
+nav a {
+    display: block;
+    padding: .5rem;
+    text-transform: uppercase;
+    border: none;
+}
+
+nav a:hover {
+    background: var(--color-1);
+    color: var(--color-6);
+    border: none;
+}
+
+#menu {
+    cursor: pointer;
+}
+
+#links {
+    display: none;
+    position: absolute;
+    top: 2.7rem;
+    right: 0;
+    z-index: 100;
+}
+
+#links a {
+    margin: .8rem;
+    padding: .5rem 1rem;
+}
+
+main {
+    background: var(--main-bg);
+    margin: 0 .8rem;
+    padding: 0 .8rem;
+}
+
+footer {
+    text-align: center;
+    padding: .6rem;
+    font-style: italic;
+    font-size: .8rem;
+}
+
+header,
+nav,
+footer,
+#links {
+    color: var(--color-1);
+    background: var(--head-nav-foot-bg);
+    margin: .8rem;
+}
+
+nav {
+    margin-top: 0;
+}
+
+#links {
+    background: var(--menu-drop-bg);
+}
+
+
+/* Sticky footer */
+
+main {
+    flex-grow: 1;
+}
+
+
+/* Responsividade */
+
+@media ( min-width: 512px) {
+    #menu {
+        display: none;
+    }
+    #links {
+        position: relative;
+        display: block;
+        top: 0;
+        margin: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+    #links div {
+        display: none;
+    }
+    #links a {
+        margin: 0 0 0 1rem;
+        display: inline-block;
+    }
+}

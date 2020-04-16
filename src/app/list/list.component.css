@@ -1,0 +1,87 @@
+.list {
+    text-align: center;
+    padding: .8rem;
+    margin-top: .8rem;
+    background: var(--list-bg);
+}
+
+.list img {
+    width: 100%;
+    max-width: auto;
+    display: block;
+    margin: auto;
+}
+
+.list h3 {
+    margin: .5rem 0 .3rem 0;
+}
+
+.list .tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list .tools span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.list .tools a,
+.orderbox a {
+    display: block;
+    border: none;
+    cursor: pointer;
+    padding: .3rem;
+}
+
+.list .tools a:hover,
+.orderbox a:hover,
+.mark {
+    background: var(--color-1);
+    color: var(--color-6);
+}
+
+.iflist {
+    padding-bottom: .8rem;
+}
+
+
+/* Caixa de ordenação */
+
+.orderbox {
+    padding: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    background: var(--list-bg);
+}
+
+.orderbox div {
+    /* flex-grow: 1; */
+}
+
+.orderbox select {
+    font-family: inherit;
+    font-size: inherit;
+    padding: .25rem;
+    color: var(--color-1);
+    background: var(--color-7);
+    border: none;
+}
+
+@media (min-width: 640px) {
+    .iflist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .list {
+        width: 49%;
+    }
+    .orderbox {
+        font-size: 1rem;
+        justify-content: flex-end;
+    }
+}

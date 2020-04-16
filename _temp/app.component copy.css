@@ -1,0 +1,74 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px #040, 1px -1px #040, -1px 1px #040, -1px -1px #040;
+}
+
+header h1 {
+    margin: 1.2rem 0;
+    letter-spacing: 1.5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    margin-top: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: .3rem .5rem;
+    flex-grow: 1;
+    text-align: center;
+    color: rgb(0, 255, 0);
+    text-transform: uppercase;
+    border: none;
+}
+
+nav a:hover {
+    background: rgb(0, 255, 0);
+    color: rgb(0, 70, 0);
+}
+
+main {
+    background: rgba(0, 40, 0, 0.9);
+    margin: 0 .8rem;
+    padding: 0 .8rem;
+}
+
+footer {
+    text-align: center;
+    padding: .6rem;
+    font-style: italic;
+    font-size: .8rem;
+}
+
+header,
+nav,
+footer {
+    color: rgb(0, 255, 0);
+    background: rgba(0, 70, 0, 0.5);
+    margin: 0.8rem;
+}
+
+
+/* Responsive */
+
+@media (min-width: 478px) {
+    nav {
+        justify-content: flex-start;
+    }
+    nav a {
+        flex-grow: 0;
+        padding: 1rem;
+    }
+}
+
+
+/* Sticky footer */
+
+main {
+    flex-grow: 1;
+}

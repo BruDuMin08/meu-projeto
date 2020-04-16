@@ -1,0 +1,54 @@
+<h2>Lista de Games</h2>
+
+<!-- Ferrmanetas de ordenação da listagem -->
+<div class="orderbox hborder">
+
+    <!-- Escolha do campo pelo qual ordenar (dafault: title) -->
+    <div>
+        Ordem:
+        <select name="orderby" (change)="changeOrderField($event.target.value)">
+      <option value="title">Título</option>
+      <option value="date">Data</option>
+      <option value="platform">Plataforma</option>
+      <option value="media">Tipo de mídia</option>
+    </select>
+    </div>
+
+    <!-- Ordenação menor para o maior -->
+    <a title="Ascendente" [ngClass]="{'mark': orderDr == 'asc'}" (click)="changeOrderDir('asc')"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
+    <a title="Descendente" [ngClass]="{'mark': orderDr == 'desc'}" (click)="changeOrderDir('desc')"><i class="fas fa-fw fa-arrow-alt-circle-down"></i></a>
+
+    <!-- Tics das bordas -->
+    <div class="hbd tl"></div>
+    <div class="hbd tr"></div>
+    <div class="hbd bl"></div>
+    <div class="hbd br"></div>
+
+</div>
+
+<div *ngIf="games" class="iflist">
+
+    <!-- Loop dos documentos retornados -->
+    <div *ngFor="let g of games | async" class="list vborder">
+
+        <img src="{{g.cover}}" alt="{{g.title}}">
+        <h3>{{g.title}}</h3>
+        <div class="small">{{g.platform}} - Mídia {{g.media}}</div>
+        <p>{{g.description}}</p>
+        <div class="tools">
+            <span class="small">Adquirido em {{g.date | date : 'dd/MM/yyyy'}}.</span>
+
+            <!-- Botões para editar e apagar o documento -->
+            <a title="Editar {{g.title}}"><i class="fas fa-fw fa-edit"></i></a>
+            <a title="Apagar {{g.title}}"><i class="fas fa-fw fa-trash-alt"></i></a>
+        </div>
+
+        <!-- Tics das bordas -->
+        <div class="vbd tl"></div>
+        <div class="vbd tr"></div>
+        <div class="vbd bl"></div>
+        <div class="vbd br"></div>
+
+    </div>
+
+</div>

@@ -1,0 +1,176 @@
+/* FOLHAS DE ESTILO GLOBAIS - Afetam toda a aplicação. */
+
+
+/* Cores do tema */
+
+:root {
+    --color-1: rgb(0, 255, 255);
+    --color-2: rgb(0, 232, 240);
+    --color-3: rgb(0, 209, 224);
+    --color-4: rgb(0, 131, 192);
+    --color-5: rgb(0, 102, 128);
+    --color-6: rgb(0, 17, 64);
+    --color-7: rgb(0, 32, 0);
+    --color-8: rgb(0, 16, 0);
+    --link-hover: orangered;
+    --box-border-px: 2px;
+    --box-border-tik: 8px;
+    --box-border: var(--box-border-px) solid var(--color-1);
+    --head-nav-foot-bg: rgba(0, 38, 64, 0.5);
+    --main-bg: rgba(0, 31, 32, 0.9);
+    --menu-drop-bg: rgba(0, 51, 64, 0.9);
+    --list-bg: rgba(0, 93, 96, 0.5);
+}
+
+
+/* CSS reset */
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Comic Neue', cursive;
+    font-size: 16px;
+}
+
+body {
+    background-image: url('assets/one2.png');
+    background-attachment: fixed;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    color: var(--color-1);
+}
+
+a {
+    color: var(--color-1);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-1);
+    display: inline-block;
+}
+
+a:hover {
+    color: var(--link-hover);
+    border-bottom: 1px dotted var(--link-hover);
+}
+
+
+/* Centraliza e limita o crescimento da tela. */
+
+app-root {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+}
+
+
+/* Sticky footer */
+
+html,
+body,
+app-root {
+    position: relative;
+    height: 100%;
+}
+
+
+/* Responsivo */
+
+@media (min-width: 640px) {
+    body {
+        background-position: center;
+    }
+}
+
+
+/* Botões genéricos */
+
+.basic-button {
+    display: inline-block;
+    padding: .5rem 1rem;
+    color: var(--color-8);
+    background: linear-gradient(var(--color-2), var(--color-4));
+    border-radius: 0rem;
+    border: none;
+    text-transform: uppercase;
+}
+
+.basic-button:hover {
+    color: var(--color-1);
+    background: linear-gradient(var(--color-5), var(--color-7));
+    border: none;
+}
+
+
+/* Classes de uso geral */
+
+.center {
+    text-align: center;
+}
+
+.small {
+    font-size: small;
+}
+
+
+/* Bordas das caixas */
+
+.hborder {
+    border-left: var(--box-border);
+    border-right: var(--box-border);
+}
+
+.vborder {
+    border-top: var(--box-border);
+    border-bottom: var(--box-border);
+}
+
+.hborder,
+.vborder {
+    position: relative;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .7);
+}
+
+.hbd {
+    position: absolute;
+    width: var(--box-border-tik);
+    height: var(--box-border-px);
+    background: var(--color-1);
+}
+
+.vbd {
+    position: absolute;
+    height: var(--box-border-tik);
+    width: var(--box-border-px);
+    background: var(--color-1);
+}
+
+.tl {
+    top: 0;
+    left: 0;
+}
+
+.tr {
+    top: 0;
+    right: 0;
+}
+
+.br {
+    bottom: 0;
+    right: 0;
+}
+
+.bl {
+    bottom: 0;
+    left: 0;
+}
