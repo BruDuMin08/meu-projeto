@@ -14,7 +14,7 @@ const routes: Routes = [
 
   // Rota para a listagem dos games
   { path: 'list', component: ListComponent, data: { title: 'Lista de Jogos' } },
-  
+
   { path: 'new', component: NewComponent, data: { title: 'Novo Jogo' } },
   { path: 'about', component: AboutComponent, data: { title: 'Sobre o My Games' } },
 

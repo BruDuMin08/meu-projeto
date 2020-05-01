@@ -1,0 +1,76 @@
+<div class="hborder form-alert" (click)="helpToggle()">
+    <span>Todos os campos são obrigatórios.</span>
+    <span class="help-btn"><i class="fas fa-fw fa-caret-down"></i></span>
+    <!-- Tics das bordas -->
+    <div class="hbd tl"></div>
+    <div class="hbd tr"></div>
+    <div class="hbd bl"></div>
+    <div class="hbd br"></div>
+</div>
+
+<div class="row" (click)="hideAside()">
+
+    <form>
+        <input type="hidden" name="id">
+
+        <p>
+            <label for="title">Nome do jogo:</label>
+            <input type="text" name="title" placeholder="Nome do game">
+        </p>
+
+        <p>
+            <label for="cover">URL da capa:</label>
+            <input type="text" name="cover" placeholder="Ex.: http://site.com/capa.jpg">
+        </p>
+
+        <p>
+            <label for="description">Descrição do jogo:</label>
+            <textarea name="description" placeholder="Descrição resumida."></textarea>
+        </p>
+
+        <p>
+            <label for="platform">Plataforma:</label>
+            <select name="platform">
+        <option value="" disabled selected>-- Selecione --</option>
+        <option *ngFor="let p of platforms | async" value="{{p.name}}">{{p.name}}</option>
+        <option value="Outra">Outra</option>
+      </select>
+        </p>
+
+        <label for="media">Tipo de mídia:</label>
+        <fieldset>
+            <label><input type="radio" name="media" value="Fìsica"> Fisica</label> &nbsp;&nbsp;
+            <label><input type="radio" name="media" value="Digital"> Digital</label>
+        </fieldset>
+
+        <p>
+            <label for="date">Data da compra:</label>
+            <input type="date" name="date">
+        </p>
+
+        <p>
+            <button type="submit" class="basic-button"><i class="fas fa-fw fa-save"></i> Salvar</button>
+        </p>
+
+    </form>
+
+    <aside class="vborder" (click)="hideAside()">
+        <h4>Dicas de preenchimento</h4>
+        <ul>
+            <li><strong>Novo Jogo</strong>Lembre-se que todos os campos devem ser preenchidos;</li>
+            <li><strong>Nome do jogo</strong>Digite o nome completo do jogo, incluindo versões, por exemplo: Fallout 4 GOTY;</li>
+            <li><strong>URL da capa</strong>Pesquise no Google Images pela capa do jogo, copie o URL e cole no campo;</li>
+            <li><strong>Descrição do jogo</strong>Descreva o tipo e estilo de jogo, além de peculiaridades sobre ele;</li>
+            <li><strong>Plataforma</strong>Escolha a plataforma para a qual o jogo foi feito, ou a em que você vai jogar;</li>
+            <li><strong>Tipo de mídia</strong>Selecione "Digital" para jogos baixados e "Física" para CD, DVD, cartucho, cards, etc.</li>
+            <li><strong>Data da compra</strong>Digite ou selecione a data da aquisição do jogo ou uma data aproximada.</li>
+        </ul>
+
+        <!-- Tics das bordas -->
+        <div class="vbd tl"></div>
+        <div class="vbd tr"></div>
+        <div class="vbd bl"></div>
+        <div class="vbd br"></div>
+    </aside>
+
+</div>
