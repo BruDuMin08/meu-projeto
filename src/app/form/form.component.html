@@ -10,27 +10,27 @@
 
 <div class="row" (click)="hideAside()">
 
-    <form>
-        <input type="hidden" name="id">
+    <form (ngSubmit)="onSubmit()">
+        <input type="hidden" name="id" [(ngModel)]="GameForms.id">
 
         <p>
             <label for="title">Nome do jogo:</label>
-            <input type="text" name="title" placeholder="Nome do game">
+            <input type="text" name="title" placeholder="Nome do game" [(ngModel)]="GameForms.title">
         </p>
 
         <p>
             <label for="cover">URL da capa:</label>
-            <input type="text" name="cover" placeholder="Ex.: http://site.com/capa.jpg">
+            <input type="text" name="cover" placeholder="Ex.: http://site.com/capa.jpg" [(ngModel)]="GameForms.cover">
         </p>
 
         <p>
             <label for="description">Descrição do jogo:</label>
-            <textarea name="description" placeholder="Descrição resumida."></textarea>
+            <textarea name="description" placeholder="Descrição resumida." [(ngModel)]="GameForms.description"></textarea>
         </p>
 
         <p>
             <label for="platform">Plataforma:</label>
-            <select name="platform">
+            <select name="platform" [(ngModel)]="GameForms.platform">
         <option value="" disabled selected>-- Selecione --</option>
         <option *ngFor="let p of platforms | async" value="{{p.name}}">{{p.name}}</option>
         <option value="Outra">Outra</option>
@@ -39,13 +39,13 @@
 
         <label for="media">Tipo de mídia:</label>
         <fieldset>
-            <label><input type="radio" name="media" value="Fìsica"> Fisica</label> &nbsp;&nbsp;
-            <label><input type="radio" name="media" value="Digital"> Digital</label>
+            <label><input type="radio" name="media" value="Fìsica" [(ngModel)]="GameForms.media"> Fisica</label> &nbsp;&nbsp;
+            <label><input type="radio" name="media" value="Digital" [(ngModel)]="GameForms.media"> Digital</label>
         </fieldset>
 
         <p>
             <label for="date">Data da compra:</label>
-            <input type="date" name="date">
+            <input type="date" name="date" [(ngModel)]="GameForms.date">
         </p>
 
         <p>

@@ -14,6 +14,8 @@ import { E404Component } from './e404/e404.component';
 import { AboutComponent } from './about/about.component';
 import { FormComponent } from './form/form.component';
 
+//Importa componentes de formulário
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,11 @@ import { FormComponent } from './form/form.component';
     AngularFireModule.initializeApp(environment.firebase),
 
     // Carga da classe de acesso ao Firestore
-    AngularFirestoreModule
+    AngularFirestoreModule,
+
+    // Carga de FormsModule
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,12 +3,19 @@ import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from 'jquery';
 
+// Importar a classe dos campos do formulário
+import { GameForms } from '../classes/game-forms';
+
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+
+  // Declara campos do formulário
+  GameForms: GameForms = new GameForms();
 
   // Armazena os nomes das plataformas
   platforms: Observable<any[]>;
@@ -31,6 +38,18 @@ export class FormComponent implements OnInit {
       });
     });
   }
+
+// Método que processa o formulário
+onSubmit() {
+  console.log(this.GameForms);
+
+}
+
+
+
+
+
+
 
   // Oculta / exibe ajuda
   helpToggle() {
