@@ -16,6 +16,7 @@ import { FormComponent } from './form/form.component';
 
 //Importa componentes de formulário
 import {FormsModule} from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import {FormsModule} from '@angular/forms';
     NewComponent,
     E404Component,
     AboutComponent,
-    FormComponent
+    FormComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

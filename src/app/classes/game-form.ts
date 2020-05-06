@@ -1,4 +1,4 @@
-export class GameForms {
+export class GameForm {
   id: string;
   cover: string;
   date: string;

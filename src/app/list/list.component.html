@@ -38,9 +38,11 @@
         <div class="tools">
             <span class="small">Adquirido em {{g.date | date : 'dd/MM/yyyy'}}.</span>
 
-            <!-- Botões para editar e apagar o documento -->
-            <a title="Editar {{g.title}}"><i class="fas fa-fw fa-edit"></i></a>
-            <a title="Apagar {{g.title}}"><i class="fas fa-fw fa-trash-alt"></i></a>
+            <!-- Botões para editar -->
+            <a title="Editar {{g.title}}" [routerLink]="['/edit/', g.id]"><i class="fas fa-fw fa-edit"></i></a>
+
+            <!-- apagar o documento -->
+            <a title="Apagar {{g.title}}" (click)="deleteGame(g.id, g.title)"><i class="fas fa-fw fa-trash-alt"></i></a>
         </div>
 
         <!-- Tics das bordas -->

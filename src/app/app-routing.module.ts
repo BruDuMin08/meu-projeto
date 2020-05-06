@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { NewComponent } from './new/new.component';
 import { E404Component } from './e404/e404.component';
 import { AboutComponent } from './about/about.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
 
@@ -17,6 +18,10 @@ const routes: Routes = [
 
   { path: 'new', component: NewComponent, data: { title: 'Novo Jogo' } },
   { path: 'about', component: AboutComponent, data: { title: 'Sobre o My Games' } },
+
+  // Rota para editar
+  { path: 'edit/:id', component: EditComponent, data: { title: 'Sobre o My Games' } },
+
 
   // Rota desconhecida é redirecionada para o componente "Erro 404"
   { path: '**', component: E404Component, data: { title: 'Página não encontrada' } }
